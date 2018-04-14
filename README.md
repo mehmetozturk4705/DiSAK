@@ -5,7 +5,7 @@ MS patients are not able to use computer without support of special ergonomical 
 
 This project will utilize alternative methods to use computer such as facial features and mpu6050 imu sensor based controller.
 
-####How to build?
+#### How to build?
 Clone the repository and open solution with Visaul Studio 2013 or later to build.
 
 
