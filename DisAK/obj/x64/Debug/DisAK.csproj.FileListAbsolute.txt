@@ -78,7 +78,6 @@ C:\Users\4705\Documents\Visual Studio 2013\Projects\DisAK-Emgu\DisAK\bin\x64\Deb
 C:\Users\4705\Documents\Visual Studio 2013\Projects\DisAK-Emgu\DisAK\bin\x64\Debug\haar\haarcascade_lefteye_2splits.xml
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.csprojResolveAssemblyReference.cache
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.DiPOD.resources
-E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.Form1.resources
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.kamerasec.resources
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.Main.resources
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.Properties.Resources.resources
@@ -140,3 +139,4 @@ E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\bin\x64\Debug\sv\ZedGraph.resour
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\bin\x64\Debug\tr\ZedGraph.resources.dll
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\bin\x64\Debug\zh-cn\ZedGraph.resources.dll
 E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\bin\x64\Debug\zh-tw\ZedGraph.resources.dll
+E:\Mehmet Öztürk\proje\disak\DisAK-Emgu\DisAK\obj\x64\Debug\DisAK.CameraForm.resources

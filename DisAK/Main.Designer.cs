@@ -37,30 +37,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myriad Pro Cond", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(84, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 38);
+            this.label1.Size = new System.Drawing.Size(461, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hangi kontrol yöntemini tercih edersiniz?";
+            this.label1.Text = "Which control method do you wish to use?";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(60, 108);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 115);
+            this.button1.Size = new System.Drawing.Size(140, 42);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Yüz ile Kontrol";
+            this.button1.Text = "Facial Control";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(324, 108);
+            this.button2.Location = new System.Drawing.Point(409, 108);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 115);
+            this.button2.Size = new System.Drawing.Size(136, 42);
             this.button2.TabIndex = 2;
-            this.button2.Text = "DiPOD ile Kontrol";
+            this.button2.Text = "DiPOD Control";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -68,15 +68,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 252);
+            this.ClientSize = new System.Drawing.Size(616, 171);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(632, 291);
-            this.MinimumSize = new System.Drawing.Size(632, 291);
+            this.MaximumSize = new System.Drawing.Size(632, 210);
+            this.MinimumSize = new System.Drawing.Size(632, 210);
             this.Name = "Main";
-            this.Text = "DisAK Karşılama Ekranı";
+            this.Text = "DisAK";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();

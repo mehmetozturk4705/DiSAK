@@ -1,6 +1,6 @@
 ﻿namespace DisAK
 {
-    partial class Form1
+    partial class CameraForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CameraForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +37,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.goruntu = new Emgu.CV.UI.ImageBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.RightEye = new Emgu.CV.UI.ImageBox();
+            this.LeftEye = new Emgu.CV.UI.ImageBox();
             this.eyebox = new Emgu.CV.UI.ImageBox();
             this.console1 = new System.Windows.Forms.TextBox();
             this.facebox = new Emgu.CV.UI.ImageBox();
@@ -57,12 +59,12 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.mousetimer = new System.Windows.Forms.Timer(this.components);
-            this.LeftEye = new Emgu.CV.UI.ImageBox();
-            this.RightEye = new Emgu.CV.UI.ImageBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goruntu)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eyebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebox)).BeginInit();
             this.butons.SuspendLayout();
@@ -71,8 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.fullscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.notify.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -89,29 +89,31 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(-2, 36);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(128, 22);
+            this.menuStrip1.Size = new System.Drawing.Size(95, 22);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dosyaToolStripMenuItem
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yeniToolStripMenuItem});
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(59, 18);
-            this.dosyaToolStripMenuItem.Text = "DOSYA";
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(42, 18);
+            this.dosyaToolStripMenuItem.Text = "FILE";
+            this.dosyaToolStripMenuItem.Click += new System.EventHandler(this.dosyaToolStripMenuItem_Click);
             // 
             // yeniToolStripMenuItem
             // 
             this.yeniToolStripMenuItem.Name = "yeniToolStripMenuItem";
-            this.yeniToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.yeniToolStripMenuItem.Text = "Yeni";
+            this.yeniToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yeniToolStripMenuItem.Text = "New ";
             // 
             // yardımToolStripMenuItem
             // 
             this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
-            this.yardımToolStripMenuItem.Size = new System.Drawing.Size(63, 18);
-            this.yardımToolStripMenuItem.Text = "YARDIM";
+            this.yardımToolStripMenuItem.Size = new System.Drawing.Size(47, 18);
+            this.yardımToolStripMenuItem.Text = "HELP";
             // 
             // groupBox1
             // 
@@ -160,8 +162,24 @@
             this.groupBox2.Size = new System.Drawing.Size(347, 456);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Seçenekler";
+            this.groupBox2.Text = "Options";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // RightEye
+            // 
+            this.RightEye.Location = new System.Drawing.Point(187, 293);
+            this.RightEye.Name = "RightEye";
+            this.RightEye.Size = new System.Drawing.Size(154, 144);
+            this.RightEye.TabIndex = 9;
+            this.RightEye.TabStop = false;
+            // 
+            // LeftEye
+            // 
+            this.LeftEye.Location = new System.Drawing.Point(9, 293);
+            this.LeftEye.Name = "LeftEye";
+            this.LeftEye.Size = new System.Drawing.Size(154, 144);
+            this.LeftEye.TabIndex = 2;
+            this.LeftEye.TabStop = false;
             // 
             // eyebox
             // 
@@ -177,7 +195,7 @@
             // console1
             // 
             this.console1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.console1.Font = new System.Drawing.Font("Prestige Elite Std", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.console1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.console1.ForeColor = System.Drawing.Color.Brown;
             this.console1.Location = new System.Drawing.Point(9, 48);
             this.console1.Multiline = true;
@@ -214,7 +232,7 @@
             this.dur.Name = "dur";
             this.dur.Size = new System.Drawing.Size(92, 23);
             this.dur.TabIndex = 5;
-            this.dur.Text = "Dur";
+            this.dur.Text = "Stop";
             this.dur.UseVisualStyleBackColor = true;
             this.dur.Click += new System.EventHandler(this.dur_Click);
             // 
@@ -224,7 +242,7 @@
             this.basla.Name = "basla";
             this.basla.Size = new System.Drawing.Size(100, 23);
             this.basla.TabIndex = 2;
-            this.basla.Text = "Başlat";
+            this.basla.Text = "Start";
             this.basla.UseVisualStyleBackColor = true;
             this.basla.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -320,26 +338,26 @@
             this.gösterGizleToolStripMenuItem,
             this.çıkışToolStripMenuItem});
             this.notify.Name = "notify";
-            this.notify.Size = new System.Drawing.Size(139, 48);
+            this.notify.Size = new System.Drawing.Size(134, 48);
             // 
             // gösterGizleToolStripMenuItem
             // 
             this.gösterGizleToolStripMenuItem.Name = "gösterGizleToolStripMenuItem";
-            this.gösterGizleToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.gösterGizleToolStripMenuItem.Text = "Göster/Gizle";
+            this.gösterGizleToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.gösterGizleToolStripMenuItem.Text = "Show/Hide";
             this.gösterGizleToolStripMenuItem.Click += new System.EventHandler(this.gösterGizleToolStripMenuItem_Click);
             // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.çıkışToolStripMenuItem.Text = "Çıkış";
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.çıkışToolStripMenuItem.Text = "Exit";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
             // notifyIcon
             // 
             this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon.BalloonTipText = "DiSAK çalışmaya devam ediyor";
+            this.notifyIcon.BalloonTipText = "DiSAK is still running...";
             this.notifyIcon.BalloonTipTitle = "DiSAK";
             this.notifyIcon.ContextMenuStrip = this.notify;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
@@ -353,23 +371,7 @@
             this.mousetimer.Interval = 10;
             this.mousetimer.Tick += new System.EventHandler(this.MouseControl_tick);
             // 
-            // LeftEye
-            // 
-            this.LeftEye.Location = new System.Drawing.Point(9, 293);
-            this.LeftEye.Name = "LeftEye";
-            this.LeftEye.Size = new System.Drawing.Size(154, 144);
-            this.LeftEye.TabIndex = 2;
-            this.LeftEye.TabStop = false;
-            // 
-            // RightEye
-            // 
-            this.RightEye.Location = new System.Drawing.Point(187, 293);
-            this.RightEye.Name = "RightEye";
-            this.RightEye.Size = new System.Drawing.Size(154, 144);
-            this.RightEye.TabIndex = 9;
-            this.RightEye.TabStop = false;
-            // 
-            // Form1
+            // CameraForm
             // 
             this.AccessibleName = "DisAK (Aid Kit for New Generation)";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,7 +392,7 @@
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(920, 400);
-            this.Name = "Form1";
+            this.Name = "CameraForm";
             this.Text = "DisAK";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.onFormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -401,6 +403,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.goruntu)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eyebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebox)).EndInit();
             this.butons.ResumeLayout(false);
@@ -409,8 +413,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.fullscreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.notify.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

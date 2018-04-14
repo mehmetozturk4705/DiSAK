@@ -149,11 +149,11 @@
     <None Include="EigenObjectRecognizer.cs" />
     <Compile Include="Fare.cs" />
     <Compile Include="FiltreTemel.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="CameraForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CameraForm.Designer.cs">
+      <DependentUpon>CameraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Imlec.cs" />
     <Compile Include="Keyboard.cs" />
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="DiPOD.resx">
       <DependentUpon>DiPOD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CameraForm.resx">
+      <DependentUpon>CameraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kamerasec.resx">
       <DependentUpon>kamerasec.cs</DependentUpon>

@@ -26,7 +26,7 @@ using System.Drawing.Imaging;
 //Operator: Mehmet ÖZTÜRK
 namespace DisAK
 {
-    public partial class Form1 : Form
+    public partial class CameraForm : Form
     {
         
         
@@ -83,7 +83,7 @@ namespace DisAK
         mod program = mod.Tanıma;   
 
         private int[] initial = new int[2] { 0, 0 };
-        public Form1()
+        public CameraForm()
         {
             
           
@@ -567,7 +567,7 @@ namespace DisAK
         {
             if (e.CloseReason == CloseReason.ApplicationExitCall)
             {
-                if (MessageBox.Show("Çıkmak istediğinize emin misiniz?", "DisAK", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Are you sure you want to exit?", "DisAK", MessageBoxButtons.YesNo) == DialogResult.No)
                     e.Cancel = true;
             }
             else { 
@@ -672,7 +672,7 @@ namespace DisAK
                 capt.ImageGrabbed -= goruntual;
                 ((Button)sender).Enabled = true;
                 dur.Enabled = false;
-                MessageBox.Show("Seçilen kamera başlatılırken bir hata meydana geldi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Unresolved error while trying to open camera!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
            
@@ -746,14 +746,14 @@ namespace DisAK
 
         }
 
+        private void dosyaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
 
-     
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
-      
-      
-       
-
-        
+        }
     }
 }

@@ -49,9 +49,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 13);
+            this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Kullanmak istediğiniz kamerayı seçiniz.";
+            this.label1.Text = "Please select your camera";
             // 
             // tamam
             // 
@@ -60,7 +60,7 @@
             this.tamam.Name = "tamam";
             this.tamam.Size = new System.Drawing.Size(75, 23);
             this.tamam.TabIndex = 2;
-            this.tamam.Text = "Tamam";
+            this.tamam.Text = "Ok";
             this.tamam.UseVisualStyleBackColor = true;
             this.tamam.Click += new System.EventHandler(this.tamam_Click);
             // 
@@ -78,7 +78,7 @@
             this.MinimumSize = new System.Drawing.Size(404, 168);
             this.Name = "kamerasec";
             this.ShowInTaskbar = false;
-            this.Text = "Kamera Ayarı";
+            this.Text = "Camera Settings";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.kamerasec_Load);
             this.ResumeLayout(false);
