@@ -21,14 +21,28 @@ namespace DisAK
         Point delta = new Point(0, 0);
         Point position = new Point(32767, 32767);
         Point positionex = new Point(32767, 32767);
+        FiltreTemel filtre = new FiltreTemel();
         int hiz = 0;
         float fps = 0.1f;
+        float _hiz = 0;
         public Imlec() { 
         
         }
+        public float Hiz
+        {
+            set
+            {
+                this._hiz = value;
+            }
+            get
+            {
+                return this._hiz;
+            }
+        }
 
-        
-        
+
+
+
 
         public void feed(float yaw,float pitch,float fps){
             this.yaw = yaw;
@@ -70,9 +84,13 @@ namespace DisAK
             double xcomp = fps*0.8f;
             double ycomp = fps*0.8f;
 
+            int deltaX = (int)((X - position.X) / xcomp);
+            int deltaY = (int)((Y - position.Y) / ycomp);
+            Hiz = (float)Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+            
 
-            position.X += (int)((X - position.X)/xcomp );
-            position.Y += (int)((Y - position.Y) /ycomp );
+            position.X += deltaX;
+            position.Y += deltaY;
 
         }
        

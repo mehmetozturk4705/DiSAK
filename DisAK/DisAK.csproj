@@ -155,6 +155,12 @@
     <Compile Include="CameraForm.Designer.cs">
       <DependentUpon>CameraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FareMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FareMenu.Designer.cs">
+      <DependentUpon>FareMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Imlec.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="Main.cs">
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CameraForm.resx">
       <DependentUpon>CameraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FareMenu.resx">
+      <DependentUpon>FareMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kamerasec.resx">
       <DependentUpon>kamerasec.cs</DependentUpon>
@@ -262,6 +271,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\aaaa.png" />
+    <None Include="Resources\mouse-arrows-move-control-device-512.png" />
+    <None Include="Resources\mouse-device-right-click-.png" />
+    <None Include="Resources\mouse-device-left-double-click-512.png" />
+    <None Include="Resources\left.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\normal.png" />
     <None Include="Resources\mini.png" />

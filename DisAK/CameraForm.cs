@@ -40,6 +40,7 @@ namespace DisAK
         private Stopwatch fpstimer = new Stopwatch();
         private Pozlama pozlama;
         private double fps = 0;
+        private FareMenu fareform;
        
 
         
@@ -239,7 +240,7 @@ namespace DisAK
 
                         faceg = kareg.Copy();
                         kareg.ROI = new Rectangle();
-
+                        
 
                         if (program == mod.Tanıma && !modtimer.IsRunning)
                             modtimer.Start();
@@ -248,13 +249,13 @@ namespace DisAK
                             karei.Draw(veri, new Bgr(255, 0, 0));// kalmandan gelen verileri ekrana çizme ekrana çizme
                         if (program == mod.Tanıma)
                         {
-                            #region tanıma
-
+                        #region tanıma
+                        stopFareForm();
 
                             MKeyPoint[] noktalar = gftt.Detect(faceg);
 
 
-
+                        
                             noktalarf[0] = new PointF[noktalar.Length];
 
                             for (int i = 0; i < noktalar.Length; i++)
@@ -269,7 +270,7 @@ namespace DisAK
                             {
                                 noktalarf[0][i].X += processedveri[0].X;
                                 noktalarf[0][i].Y += processedveri[0].Y;
-
+                                
 
 
                             }
@@ -334,9 +335,12 @@ namespace DisAK
 
                     if (program == mod.Takip)
                     {
+                         //Fare form oluşturulmamışsa açılır
+                        startFareForm();
                         float[] trackError;
                         byte[] status;
                         PointF[] noktayeni = new PointF[eskiftr.Length];
+                        
 
 
                         #region opticalFlow algoritması
@@ -430,13 +434,14 @@ namespace DisAK
                         eskiftr = noktayeni;
                         float[] rotasyon = pozlama.rotasyon(eskiftr, processedveri[0]);
                         imlec.feed(rotasyon[0], rotasyon[1], (float)fps);
+                        this.Invoke((Action)delegate { fareform.mouseVelocity = imlec.Hiz; });
+                        console1.Invoke((Action)delegate { console1.AppendText("" + fareform.tickIndex + "\n"); });
+                /*yprgosterge.Invoke((Action)delegate
+                {
+                    yprgosterge.Text = "Yaw:" + Math.Round(rotasyon[0], 2, MidpointRounding.AwayFromZero) + "Pitch:" + Math.Round(rotasyon[1], 2, MidpointRounding.AwayFromZero) + "Roll:" + Math.Round(rotasyon[2], 2, MidpointRounding.ToEven);
+                });*/
 
-                        /*yprgosterge.Invoke((Action)delegate
-                        {
-                            yprgosterge.Text = "Yaw:" + Math.Round(rotasyon[0], 2, MidpointRounding.AwayFromZero) + "Pitch:" + Math.Round(rotasyon[1], 2, MidpointRounding.AwayFromZero) + "Roll:" + Math.Round(rotasyon[2], 2, MidpointRounding.ToEven);
-                        });*/
-
-                    }
+            }
 
                     eskikare = kareg;
                     karei.ROI = new Rectangle();
@@ -690,6 +695,31 @@ namespace DisAK
             
 
         }
+        private void startFareForm()
+        {
+            if (fareform == null)
+            {
+                fareform = new FareMenu();
+                this.Invoke((Action)delegate
+                {
+                    fareform.Show();
+                });
+                
+
+            }
+        }
+        private void stopFareForm()
+        {
+            if (fareform != null)
+            {
+                this.Invoke((Action)delegate {
+                    fareform.Close();
+                    fareform.Dispose();
+                });
+
+                fareform = null;
+            }
+        }
 
         private void dur_Click(object sender, EventArgs e)
         {
@@ -705,6 +735,8 @@ namespace DisAK
             
             goruntu.Visible = false;
             mousetimer.Stop();
+            stopFareForm();
+
             
             
         }
@@ -752,6 +784,11 @@ namespace DisAK
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

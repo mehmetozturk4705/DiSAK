@@ -35,23 +35,14 @@
             this.yeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.goruntu = new Emgu.CV.UI.ImageBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.RightEye = new Emgu.CV.UI.ImageBox();
-            this.LeftEye = new Emgu.CV.UI.ImageBox();
-            this.eyebox = new Emgu.CV.UI.ImageBox();
             this.console1 = new System.Windows.Forms.TextBox();
-            this.facebox = new Emgu.CV.UI.ImageBox();
             this.bilgiler = new System.Windows.Forms.Label();
             this.dur = new System.Windows.Forms.Button();
             this.basla = new System.Windows.Forms.Button();
             this.labelcam = new System.Windows.Forms.Label();
             this.Caption = new System.Windows.Forms.Panel();
             this.butons = new System.Windows.Forms.Panel();
-            this.minimize = new System.Windows.Forms.PictureBox();
-            this.close = new System.Windows.Forms.PictureBox();
-            this.fullscreen = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.notify = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gösterGizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,20 +50,29 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.mousetimer = new System.Windows.Forms.Timer(this.components);
+            this.minimize = new System.Windows.Forms.PictureBox();
+            this.close = new System.Windows.Forms.PictureBox();
+            this.fullscreen = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.goruntu = new Emgu.CV.UI.ImageBox();
+            this.RightEye = new Emgu.CV.UI.ImageBox();
+            this.LeftEye = new Emgu.CV.UI.ImageBox();
+            this.eyebox = new Emgu.CV.UI.ImageBox();
+            this.facebox = new Emgu.CV.UI.ImageBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.goruntu)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eyebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facebox)).BeginInit();
             this.butons.SuspendLayout();
+            this.notify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.notify.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goruntu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eyebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facebox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -106,7 +106,7 @@
             // yeniToolStripMenuItem
             // 
             this.yeniToolStripMenuItem.Name = "yeniToolStripMenuItem";
-            this.yeniToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yeniToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.yeniToolStripMenuItem.Text = "New ";
             // 
             // yardımToolStripMenuItem
@@ -130,21 +130,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // goruntu
-            // 
-            this.goruntu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.goruntu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.goruntu.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.goruntu.Location = new System.Drawing.Point(17, 40);
-            this.goruntu.Name = "goruntu";
-            this.goruntu.Size = new System.Drawing.Size(516, 437);
-            this.goruntu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.goruntu.TabIndex = 2;
-            this.goruntu.TabStop = false;
-            this.goruntu.Visible = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -165,33 +150,6 @@
             this.groupBox2.Text = "Options";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // RightEye
-            // 
-            this.RightEye.Location = new System.Drawing.Point(187, 293);
-            this.RightEye.Name = "RightEye";
-            this.RightEye.Size = new System.Drawing.Size(154, 144);
-            this.RightEye.TabIndex = 9;
-            this.RightEye.TabStop = false;
-            // 
-            // LeftEye
-            // 
-            this.LeftEye.Location = new System.Drawing.Point(9, 293);
-            this.LeftEye.Name = "LeftEye";
-            this.LeftEye.Size = new System.Drawing.Size(154, 144);
-            this.LeftEye.TabIndex = 2;
-            this.LeftEye.TabStop = false;
-            // 
-            // eyebox
-            // 
-            this.eyebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.eyebox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.eyebox.Location = new System.Drawing.Point(9, 159);
-            this.eyebox.Name = "eyebox";
-            this.eyebox.Size = new System.Drawing.Size(332, 128);
-            this.eyebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.eyebox.TabIndex = 8;
-            this.eyebox.TabStop = false;
-            // 
             // console1
             // 
             this.console1.BackColor = System.Drawing.SystemColors.WindowText;
@@ -204,18 +162,6 @@
             this.console1.Size = new System.Drawing.Size(195, 105);
             this.console1.TabIndex = 7;
             this.console1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // facebox
-            // 
-            this.facebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.facebox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.facebox.Location = new System.Drawing.Point(210, 19);
-            this.facebox.Name = "facebox";
-            this.facebox.Size = new System.Drawing.Size(131, 134);
-            this.facebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.facebox.TabIndex = 2;
-            this.facebox.TabStop = false;
-            this.facebox.Visible = false;
             // 
             // bilgiler
             // 
@@ -279,6 +225,45 @@
             this.butons.Size = new System.Drawing.Size(108, 39);
             this.butons.TabIndex = 7;
             // 
+            // notify
+            // 
+            this.notify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gösterGizleToolStripMenuItem,
+            this.çıkışToolStripMenuItem});
+            this.notify.Name = "notify";
+            this.notify.Size = new System.Drawing.Size(134, 48);
+            // 
+            // gösterGizleToolStripMenuItem
+            // 
+            this.gösterGizleToolStripMenuItem.Name = "gösterGizleToolStripMenuItem";
+            this.gösterGizleToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.gösterGizleToolStripMenuItem.Text = "Show/Hide";
+            this.gösterGizleToolStripMenuItem.Click += new System.EventHandler(this.gösterGizleToolStripMenuItem_Click);
+            // 
+            // çıkışToolStripMenuItem
+            // 
+            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.çıkışToolStripMenuItem.Text = "Exit";
+            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipText = "DiSAK is still running...";
+            this.notifyIcon.BalloonTipTitle = "DiSAK";
+            this.notifyIcon.ContextMenuStrip = this.notify;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "DiSAK";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // mousetimer
+            // 
+            this.mousetimer.Enabled = true;
+            this.mousetimer.Interval = 10;
+            this.mousetimer.Tick += new System.EventHandler(this.MouseControl_tick);
+            // 
             // minimize
             // 
             this.minimize.Location = new System.Drawing.Point(9, 8);
@@ -330,46 +315,62 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.logopaint);
             // 
-            // notify
+            // goruntu
             // 
-            this.notify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gösterGizleToolStripMenuItem,
-            this.çıkışToolStripMenuItem});
-            this.notify.Name = "notify";
-            this.notify.Size = new System.Drawing.Size(134, 48);
+            this.goruntu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.goruntu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.goruntu.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.goruntu.Location = new System.Drawing.Point(17, 40);
+            this.goruntu.Name = "goruntu";
+            this.goruntu.Size = new System.Drawing.Size(516, 437);
+            this.goruntu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.goruntu.TabIndex = 2;
+            this.goruntu.TabStop = false;
+            this.goruntu.Visible = false;
             // 
-            // gösterGizleToolStripMenuItem
+            // RightEye
             // 
-            this.gösterGizleToolStripMenuItem.Name = "gösterGizleToolStripMenuItem";
-            this.gösterGizleToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.gösterGizleToolStripMenuItem.Text = "Show/Hide";
-            this.gösterGizleToolStripMenuItem.Click += new System.EventHandler(this.gösterGizleToolStripMenuItem_Click);
+            this.RightEye.Location = new System.Drawing.Point(187, 293);
+            this.RightEye.Name = "RightEye";
+            this.RightEye.Size = new System.Drawing.Size(154, 144);
+            this.RightEye.TabIndex = 9;
+            this.RightEye.TabStop = false;
             // 
-            // çıkışToolStripMenuItem
+            // LeftEye
             // 
-            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.çıkışToolStripMenuItem.Text = "Exit";
-            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
+            this.LeftEye.Location = new System.Drawing.Point(9, 293);
+            this.LeftEye.Name = "LeftEye";
+            this.LeftEye.Size = new System.Drawing.Size(154, 144);
+            this.LeftEye.TabIndex = 2;
+            this.LeftEye.TabStop = false;
             // 
-            // notifyIcon
+            // eyebox
             // 
-            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon.BalloonTipText = "DiSAK is still running...";
-            this.notifyIcon.BalloonTipTitle = "DiSAK";
-            this.notifyIcon.ContextMenuStrip = this.notify;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "DiSAK";
-            this.notifyIcon.Visible = true;
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            this.eyebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.eyebox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.eyebox.Location = new System.Drawing.Point(9, 159);
+            this.eyebox.Name = "eyebox";
+            this.eyebox.Size = new System.Drawing.Size(332, 128);
+            this.eyebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.eyebox.TabIndex = 8;
+            this.eyebox.TabStop = false;
             // 
-            // mousetimer
+            // facebox
             // 
-            this.mousetimer.Enabled = true;
-            this.mousetimer.Interval = 10;
-            this.mousetimer.Tick += new System.EventHandler(this.MouseControl_tick);
+            this.facebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.facebox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.facebox.Location = new System.Drawing.Point(210, 19);
+            this.facebox.Name = "facebox";
+            this.facebox.Size = new System.Drawing.Size(131, 134);
+            this.facebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.facebox.TabIndex = 2;
+            this.facebox.TabStop = false;
+            this.facebox.Visible = false;
             // 
             // CameraForm
             // 
@@ -400,19 +401,19 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.goruntu)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eyebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facebox)).EndInit();
             this.butons.ResumeLayout(false);
+            this.notify.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullscreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.notify.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.goruntu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RightEye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftEye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eyebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
